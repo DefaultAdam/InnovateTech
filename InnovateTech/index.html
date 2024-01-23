@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Techsite</title>
+    <meta name="Techsite" content="width=device-width, initial-scale=1.0" /> 
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="app.js"></script>
+</head>
+
+<!--https://youtu.be/FazgJVnrVuI -->
+<!-- https://youtu.be/2ak37WrbSDg -->
+<!--https://youtu.be/T33NN_pPeNI AND THE COMMENT IN THE VIDEO-->
+<!-- https://www.youtube.com/watch?v=C0y35FpiLRA -->
+<!-- https://codepen.io/imprakash/pen/GgNMXO -->
+<!-- https://stackoverflow.com/questions/25137447/trying-to-implement-javascript-popup-->
+<!-- https://www.youtube.com/watch?v=0X0kovjzLrw -->
+
+<body id="height">
+
+    <section class="introduction">
+        <h1 class="logo-header">
+            <span class="logo"> Innovate </span><span class="logo"> Tech </span>
+        </h1> 
+
+        <header>
+            <h4> LOGO </h4>
+        </header>
+
+        <script>
+            let introduction = document.querySelector('.introduction');
+            let logo = document.querySelector('.logo-header');
+            let logoSpan = document.querySelectorAll('.logo');
+          
+            window.addEventListener('DOMContentLoaded', () => {
+              setTimeout(() => {
+                logoSpan.forEach((span, idx) => {
+                  setTimeout(() => {
+                    span.classList.add('active');
+                  }, (idx + 1) * 400);
+                });
+          
+                setTimeout(() => {
+                  logoSpan.forEach((span, idx) => {
+                    setTimeout(() => {
+                      span.classList.remove('active');
+                      span.classList.add('fade');
+                    }, (idx + 1) * 50);
+                  });
+                }, 2000);
+          
+                setTimeout(() => {
+                  introduction.style.top = '-100vh';
+                }, 2500);
+              });
+            });
+          </script>
+    </section>
+
+
+    <section>
+        <div class="hidden1">
+            <div class="hidden1">
+                <img class="Image1" src="images/1.png" />
+            </div>
+
+        </div>
+
+        <div class="hidden2">
+            <div class="select hidden2">
+                <img class="Image2" src="images/2.png" />
+            </div>
+        </div>
+
+        <div class="hidden3">
+            <div class="hidden1">
+                <img class="Image3" src="images/3.png" />
+            </div>
+        </div>
+        
+
+        <script>
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        console.log(entry.target);
+                        entry.target.classList.remove('show');
+                    } else {
+                            entry.target.classList.add('show');
+                    }
+                });
+            });
+            const hiddenElements = document.querySelectorAll('.hidden1');
+            hiddenElements.forEach(element => {
+                observer.observe(element);
+            });
+            
+            const observer2 = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        console.log(entry.target);
+                        entry.target.classList.remove('show2');
+                    } else {
+                            entry.target.classList.add('show2');
+                    }
+                });
+            });
+            const hiddenElements2 = document.querySelectorAll('.hidden2');
+            hiddenElements2.forEach(element => {
+                observer2.observe(element);
+            });
+
+            const observer3 = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        console.log(entry.target);
+                        entry.target.classList.remove('show3');
+                    } else {
+                            entry.target.classList.add('show3');
+                    }
+                });
+            });
+            const hiddenElements3 = document.querySelectorAll('.hidden3');
+            hiddenElements3.forEach(element => {
+                observer3.observe(element);
+            });
+        </script>
+    </section>
+
+
+
+
+
+        <section>
+            <button class="trending-button1" onclick="openPopup('popup1')">Read More</button>
+            <div id="popup1" class="overlay1">
+                <div class="pop-up1">
+                    <h2>EU regulation forces Apple to change</h2>
+                    <a class="close1" href="javascript:void(0);" onclick="closePopup('popup1')">&times;</a>
+                    <div class="content1">
+                        <p>A European Union law requires phone manufacturers to adopt a common charging connection by December 2024 to save consumers money and cut waste.</p>
+                        <p>‎</p>
+                        <p>The European Union (EU) passed a law requiring all electronic devices sold in the EU to use a common charging port. This law, known as the "Common Charger Regulation", was adopted in September 2021 and will come into force in December 2024. </p>
+                        <p>‎</p>
+                        <p>The EU's decision to require a common charging port for electronic devices was motivated by a number of factors, including: </p>
+                        <p>1- To reduce electronic waste. The EU estimates that the current situation, where there are multiple different charging ports in use, leads to the unnecessary disposal of millions of chargers every year. </p>
+                        <p>2- To make it easier for consumers. Under the current system, consumers often have to buy a new charger every time they buy a new device. This can be inconvenient and expensive. </p>
+                        <p>3- To promote innovation. The EU believes that a common charging port will encourage innovation in the development of new electronic devices. </p>
+                        <p>‎</p>
+                        <p>Furthermore, Apple is planning to let users install alternative app stores on iOS.</p>
+                        <p>The plans are reportedly being spurred on by the EU’s Digital Markets Act (DMA), which is meant to enact “rules for digital gatekeepers to ensure open markets” when its restrictions become a requirement in 2024</p>
+                        <p>‎</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Picture from https://www.flickr.com/photos/southbeachcars/53377931484/ -->
+            <button class="trending-button2" onclick="openPopup('popup2')">Read More</button>
+            <div id="popup2" class="overlay2">
+                <div class="pop-up2">
+                    <h2>Tesla's new robot could be yours soon</h2>
+                    <a class="close2" href="javascript:void(0);" onclick="closePopup('popup2')">&times;</a>
+                    <div class="content2">
+                        <p>Optimus, also known as Tesla Bot, is a conceptual general-purpose robotic humanoid under development by Tesla.</p>
+                        <p>‎</p>
+                        <p>Optimus is intended to be a general-purpose robot that can perform daily tasks.</p>
+                        <p>‎</p>
+                        <p>It was announced at the company's Artificial Intelligence Day event on August 19, 2021.</p>
+                        <p>‎</p>
+                        <p>The Tesla Bot has a screen on its face that shows information, presumably a replacement for speaking. But, like a Tesla car, instead of eyes, there are eight "autopilot cameras" it uses to understand its surroundings.</p>
+                        <p>‎</p>
+                        <p>It was expected to cost much less than a car, at under $20,000.</p>
+                        <p>‎</p>
+                        <p>It is expected to be available in 2030.</p>
+                    </div>
+                </div>
+            </div>
+                
+            <button class="trending-button3" onclick="openPopup('popup3')">Read More</button>
+            <div id="popup3" class="overlay3">
+                <div class="pop-up3">
+                    <h2>How does ChatGPT work?</h2>
+                    <a class="close3" href="javascript:void(0);" onclick="closePopup('popup3')">&times;</a>
+                    <div class="content3">
+                        <p>GPT in ChatGPT stands for Generative Pre-Trained Transformers</p>
+                        <p>‎</p>
+                        <p>Pretrained artificial intelligence has been tested on a large dataset to solve problems.</p>
+                        <p>‎</p>
+                        <p>ChatGPT provides a response based on the context and intent behind a user's question.</p>
+                        <p>‎</p>
+                        <p>AIs pre-train using two principle approaches: Supervised and non-supervised.</p>
+                        <p>Supervised pre-training is a process where a model is trained on a labeled dataset, where each input is associated with a corresponding output.</p>
+                        <p>Non-supervised pre-training is the process by which a model is trained on data where no specific output is associated with each input. Instead, the model is trained to learn the underlying structure and patterns in the input data without any specific task in mind.</p>
+                        <p>‎</p>
+                        <p>The dataset used to train ChatGPT is huge. ChatGPT is based on the GPT-3, a library of over 45 terabytes of text data.</p>
+                        <p>‎</p>
+                        <p>This massive amount of data allowed ChatGPT to learn patterns and relationships between words and phrases in natural language at an unprecedented scale, which is one of the reasons why it is so effective at generating coherent and contextually relevant responses to user queries.</p>
+                    </div>
+                </div> 
+            </div>
+
+            <!-- Picture from https://www.rawpixel.com/image/6082743/apple-watch -->
+            <button class="article-button1" onclick="openPopup('popup4')">
+                <img class="article-button1image" src="images/article1.png" />
+            </button>
+            <div id="popup4" class="overlay4">
+                <div class="pop-up4">
+                    <h2>The US has lifted the ban on Apple smart watches temporarily.</h2>
+                    <a class="close4" href="javascript:void(0);" onclick="closePopup('popup4')">&times;</a>
+                    <div class="content4">
+                        <p>Apple had been temporarily given a ban on importing two of its watches by a government commission, amid a major patent dispute with a tech health firm.</p>
+                        <p>‎</p>
+                        <p>However, after the appeals court paused a previous ban on imports, Apple has won the right to import two of its smartwatches into the United States.</p>
+                        <p>‎</p>
+                        <p>Apple was ordered in October 2023 to stop importing and selling Series 9 and Ultra 2 watches, following a complaint from medical technology company ‘Masimo’ that Apple had unlawfully used proprietary software patents.
+                            Masimo accused Apple of stealing its pulse oximetry technology and incorporating it into Apple watches.</p>
+                        <p>‎</p>
+                        <p>Apple had appealed the ban that was imposed by the US International Trade Commission (ITC). But asked the US Court of Appeals to grant a pause on it in the meantime.</p>
+                        <p>‎</p>
+                        <p>Apple said it would suffer "irreparable harm" if the ban remained for the two weeks it thought it would take to get a response to its appeal from the US ITC.</p>
+                        <p>‎</p>
+                        <p>It requested to pause the ban at least until US Customs decides whether the redesigned versions of its watches infringe Masimo's patents.</p>
+                        <p>The customs office is to make its decision on 12 January.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Picture from https://www.reuters.com/legal/apple-asks-us-supreme-court-strike-down-epic-games-order-2023-09-28/ -->
+            <button class="article-button2" onclick="openPopup('popup5')">
+                <img class="article-button2image" src="images/article2.png" />
+            </button>
+            <div id="popup5" class="overlay5">
+                <div class="pop-up5">
+                    <h2>Epic Games lawsuit against Apple</h2>
+                    <a class="close5" href="javascript:void(0);" onclick="closePopup('popup5')">&times;</a>
+                    <div class="content5">
+                        <p>The Epic vs. Apple App Store lawsuit has concluded after more than three years.</p>
+                        <p>‎</p>
+                        <p>Epic updated the Fortnite app with a new feature, one that allowed consumers to pay Epic directly for in-app currency at a discount, rather than paying traditionally via Apple's App Store that collected a 30% fee.</p>
+                        <p>‎</p>
+                        <p>The fee is a non-negotiable element for the vast majority of apps.</p>
+                        <p>As was to be expected, Apple pulled the game from the App Store for violating the App Store guidelines within hours of the update's appearance.</p>
+                        <p>‎</p>
+                        <p>The same day as the removal, Epic filed a lawsuit against Apple in the U.S. District Court for the Northern District of California.</p>
+                        <p>‎</p>
+                        <p>Epic argues that the same policies are anti-competitive by forcing developers to use the App Store. If the rules weren't there, Epic states it would have released its competing app store.</p>
+                        <p>‎</p>
+                        <p>However, Apple now requires that companies that use their own billing system have to offer Apple’s as well — it can’t be a replacement.</p>
+                        <p>‎</p>
+                        <p>The US Supreme Court will not review a legal dispute between Apple and Epic Games over the App Store.</p>
+                    </div>
+                    <p class="content5-reference">image source: REUTERS/Dado Ruvic/Illustration: May 2, 2021</p>
+                </div>
+            </div>
+
+            <button class="article-button3" onclick="openPopup('popup6')">
+                <img class="article-button3image" src="images/article3.png" />
+            </button>
+            <div id="popup6" class="overlay6">
+                <div class="pop-up6">
+                    <h2>New York Times sues Microsoft and OpenAI</h2>
+                    <a class="close6" href="javascript:void(0);" onclick="closePopup('popup6')">&times;</a>
+                    <div class="content6">
+                        <p>The New York Times sued OpenAI and Microsoft for copyright infringement</p>
+                        <p>‎</p>
+                        <p>The lawsuit, filed in Federal District Court in Manhattan, contends that millions of articles published by The Times were used to train automated chatbots that now compete with the news outlet as a source of reliable information.</p>
+                        <p>‎</p>
+                        <p>The suit does not include an exact monetary demand. But it says the defendants should be held responsible for “billions of dollars in statutory and actual damages” related to the “unlawful copying and use of The Times’s uniquely valuable works.”</p>
+                        <p>‎</p>
+                        <p>At the same time, OpenAI and other A.I. tech firms — which use a wide variety of online texts, from newspaper articles to poems to screenplays, to train chatbots — are attracting billions of dollars in funding.</p>
+                        <p>‎</p>
+                        <p>Microsoft has previously acknowledged potential copyright concerns over its A.I. products.</p>
+                        <p>‎</p>
+                        <p>None of these lawsuits have yet been resolved.</p>
+                    </div>
+                    <p>image source: ajay_suresh/flickr: July 4, 2019</p>
+                </div>
+            </div>
+
+            <button class="article-button4" onclick="openPopup('popup7')">
+                <img class="article-button4image" src="images/article4.png" />
+            </button>
+            <div id="popup7" class="overlay7">
+                <div class="pop-up7">
+                    <h2>Self-driving cars could be on the UK roads by 2026</h2>
+                    <a class="close7" href="javascript:void(0);" onclick="closePopup('popup7')">&times;</a>
+                    <div class="content7">
+                        <p>The UK’s transport minister, Mark Harper announced that self-driving cars could be on some British roads by 2026.</p>
+                        <p>‎</p>
+                        <p>Cars with full self-driving technology are not currently permitted on Britain's roads but the government's Automated Vehicles (AV) legislation is going through parliament, meaning that a legal framework for them should be in place by the end of 2024.</p>
+                        <p>‎</p>
+                        <p>Mr Harper insisted the technology will be rolled out "gradually" and would be up to individuals if they want to use it.</p>
+                        <p>‎</p>
+                        <p>While fully automated vehicles have done millions of miles on public roads in the US and China, the UK has so far remained cautious about them.</p>
+                        <p>‎</p>
+                        <p>Some models of car come with what is known as driver-assist technology which can maintain a vehicle's position in line with surrounding traffic and keep them in the right lane. But, a human driver must have their hands on the wheel and be looking at the road at all times.</p>
+                    </div>
+                    <p>image source: Jonathan Billinger/geograph: 19 May, 2009</p>
+                </div>
+            </div>
+
+            <button class="article-button5" onclick="openPopup('popup8')">
+                <img class="article-button5image" src="images/article5.png" />
+            </button>
+            <div id="popup8" class="overlay8">
+                <div class="pop-up8">
+                    <h2>The future of X</h2>
+                    <a class="close8" href="javascript:void(0);" onclick="closePopup('popup8')">&times;</a>
+                    <div class="content8">
+                        <p>In the past year, a significant number of advertisers concerned about a lack of content moderation and the platform’s decreasing levels of effectiveness stopped purchasing ads on X.</p>
+                        <p>‎</p>
+                        <p>After Elon Musk's purchase of the company, and the privitasation of X has led to much speculation.</p>
+                        <p>‎</p>
+                        <p>Musk wants X to become the ‘Everything Platform’.</p>
+                        <p>‎</p>
+                        <p>Many predicitons argue that the current state of X is deteriating very fast and is creating a loss.</p>
+                        <p>The Financial Times and other large news outlets predict that X will bankrupt during 2024.</p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="article-button6" onclick="openPopup('popup9')">
+                <img class="article-button6image" src="images/article6.png" />
+            </button>
+            <div id="popup9" class="overlay9">
+                <div class="pop-up9">
+                    <h2>Sam Bankman-Fried FTX crypto-fraud case</h2>
+                    <a class="close9" href="javascript:void(0);" onclick="closePopup('popup9')">&times;</a>
+                    <div class="content9">
+                        <p>In November 2022, FTX's collapsed in 10 days, starting on November 2 and ending on November 12. 
+                            CoinDesk leaked an article containing FTX balance sheet. Binance initially announced it would sell all its FTT tokens because of the mishandled and blurred funds.</p>
+                        <p>‎</p>
+                        <p>What is FTT?
+                            Cryptocurrency platforms often create their own tokens to attract new customers. As more people invest and demand a digital token, its value increases, so platforms may offer perks. FTX created its own digital token called FTT which offered discounts and rewards.</p>
+                        <p>‎</p>
+                        <p>In early 2022, the price of Bitcoin and other cryptocurrencies started to decline drastically from its high in the beginning of 2021. Many major platforms started shutting down, except for FTX, which continued acquiring competitors.
+                        </p>
+                        <p>‎</p>
+                        <p>FTX and its sister companies did not produce balance sheets showing assets and liabilities, which is standard financial reporting procedures. FTX's balance sheets were never audited because it was a private company. Without these audits, there was no record of cash flow or assets to show the company could cover liabilities or customer assets. FTX balance sheets showed assets were less than Bankman-Fried had stated.</p>
+                        <p>‎</p>
+                        <p>Authorities arrested Bankman-Fried on December 12, 2022, for multiple fraud charges with FTX. Bankman-Fried was indicted by the U.S. District Court on eight criminal charges, including money laundering, wire fraud, campaign finance violations and securities fraud.
+                        </p>
+                        <p>‎</p>
+                        <p>Bankman-Fried was released from custody with a $250 million bond, which is the largest in history.</p>
+                    </div>
+                    <p>image source: REUTERS/Dado Ruvic/Illustration: December 13, 2022</p>
+                </div>
+            </div>
+
+            <button class="article-button7" onclick="openPopup('popup10')">
+                <img class="article-button7image" src="images/article7.png" />
+            </button>
+            <div id="popup10" class="overlay10">
+                <div class="pop-up10">
+                    <h2>Chinese companies resort to repurposing Nvidia gaming chips for AI</h2>
+                    <a class="close10" href="javascript:void(0);" onclick="closePopup('popup10')">&times;</a>
+                    <div class="content10">
+                        <p>Chinese companies are resorting to chips repurposed from standard PC gaming products to develop artificial intelligence tools, after Washington blocked US exports of high-performance processors.</p>
+                        <p>‎</p>
+                        <p>While Nvidia’s gamer-focused products have raw computing power, they are not as capable in the high-precision calculations needed for training some large language models with bigger data sets.</p>
+                        <p>‎</p>
+                        <p>Demand for the graphics processing units sourced from the gaming cards has surged in the past month, according to people familiar with the situation.</p>
+                        <p>‎</p>
+                        <p>The US said the measures were designed to prevent China from receiving cutting-edge technologies that it could use to strengthen its military, especially in the field of AI.</p>
+                        <p>‎</p>
+                        <p>Nvidia said the US government said these curbs were "effective immediately", but added that "given the strength of demand for the Company's products worldwide, the Company does not anticipate that the accelerated timing of the licensing requirements will have a near-term meaningful impact on its financial results".</p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="article-button8" onclick="openPopup('popup11')">
+                <img class="article-button8image" src="images/article8.png" />
+            </button>
+            <div id="popup11" class="overlay11">
+                <div class="pop-up11">
+                    <h2>Apple release of the Vision Pro in the US soon</h2>
+                    <a class="close11" href="javascript:void(0);" onclick="closePopup('popup11')">&times;</a>
+                    <div class="content11">
+                        <p>On January 8, 2024, Apple announced that the release date of the Vision Pro in the United States would be on February 2, 2024.</p>
+                        <p>‎</p>
+                        <p>Estimates of initial shipments range from 60,000 - 80,000 units.</p>
+                        <p>The Vision Pro starts at $3,499 with 256GB of storage.</p>
+                        <p>‎</p>
+                        <p>It comes with a battery pack, a face seal, a seal cushion, a cover for the front, an optional, adjustable upper headband, a 30W USB-C adapter and USB-C charging cable, and a polishing cloth. </p>
+                        <p>‎</p>
+                        <p>Combining virtual and augmented reality, the Apple Vision Pro can display immersive virtual "environments" or add a digital layer of hovering customizable displays to your physical surroundings, where you can interact with apps and games and watch video content. </p>
+                        <p>‎</p>
+                        <p>The Vision Pro can deliver an immersive entertainment experience with a single large display for watching movies and TV shows, or your own videos recorded with Apple's 3D-style Spatial video format. You can also use the headset to take FaceTime calls and play games, among other functions. </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Picture from -->
+            <button class="article-button9" onclick="openPopup('popup12')">
+                <img class="article-button9image" src="images/article9.png" />
+            </button>
+            <div id="popup12" class="overlay12">
+                <div class="pop-up12">
+                    <h2>The danger of your digital footprint</h2>
+                    <a class="close12" href="javascript:void(0);" onclick="closePopup('popup12')">&times;</a>
+                    <div class="content12">
+                        <p>What is a digital footprint?</p>
+                        <p>‎</p>
+                        <p>Digital footprint or digital shadow refers to one's unique set of traceable digital activities, actions, contributions, and communications manifested on the Internet or digital devices.</p>
+                        <p>‎</p>
+                        <p>You have a digital footprint if you own a smartphone, have an email address or social media profile, or have ever made an online purchase.</p>
+                        <p>‎</p>
+                        <p>A digital footprint can have several positive outcomes, such as creating a strong online presence and enhancing personal branding.</p>
+                        <p>‎</p>
+                        <p>Despite its benefits, an unmanaged or poorly managed digital footprint can pose significant risks. Online activity can be monitored by potential employers, educational institutions, and even hackers.</p>
+                        <p>‎</p>
+                        <p>In essence, your digital footprint can act as a virtual paper trail, leading directly back to you. This can expose you to many privacy risks, including cyberstalking, harassment, and even physical threats. Therefore, internet users must remain vigilant and take proactive measures to protect their online privacy.</p>
+                    </div>
+                    <p>image source: freepik https://www.freepik.com/free-vector/modern-blue-background-with-neon-fingerprint_6095387.htm</p>
+                </div>
+            </div>
+
+            <script>
+                function openPopup(popupId) {
+                    var popup = document.getElementById(popupId);
+                    popup.style.visibility = 'visible';
+                    popup.style.opacity = '1';
+                }
+
+                function closePopup(popupId) {
+                    var popup = document.getElementById(popupId);
+                    popup.style.visibility = 'hidden';
+                    popup.style.opacity = '0';
+                }
+            </script>
+        </section>
+
+
+        <section>
+            <div class="message">
+                <h1>Want more articles to read?</h1>
+                <h6>Suggest some news you'd like to see here!</h6>
+                <form action="https://formsubmit.co/0935a024f392e8c22bc4de431c9f1ece" method="POST" />
+                <form>
+                    <input class="text" type="text" placeholder="Enter your email address" required>
+
+                    <textarea class="messagebox" name="messagebox" placeholder="Enter your message here" required></textarea>
+
+                    <button class="submit-button">Send</button>
+                </form>
+                <h5>this button will take you to an external site</h5>
+            </div>
+        </section>
+
+
+        
+    
+
+
+</body>
+</html>
